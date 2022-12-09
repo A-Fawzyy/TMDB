@@ -28,12 +28,16 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewDataBinding> (
 
 	val binding: VB get() = _binding!!
 
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		viewModel = ViewModelProvider(this)[viewModelClass]
+	}
+
 	override fun onCreateView(
 		inflater: LayoutInflater,
 		container: ViewGroup?,
 		savedInstanceState: Bundle?
 	): View? {
-		viewModel = ViewModelProvider(this)[viewModelClass]
 		_binding = bindingInflater.invoke(inflater, container, false)
 		binding.lifecycleOwner = viewLifecycleOwner
 		val view = binding.root
