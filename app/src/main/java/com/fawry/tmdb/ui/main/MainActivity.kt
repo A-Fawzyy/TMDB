@@ -1,8 +1,8 @@
-package com.fawry.tmdb
+package com.fawry.tmdb.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.fawry.tmdb.ui.main.home.HomeFragment
+import com.fawry.tmdb.R
 
 class MainActivity : AppCompatActivity() {
 

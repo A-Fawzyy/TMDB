@@ -14,7 +14,7 @@
 	app:layout_constraintTop_toTopOf="parent"
 	app:layout_constraintBottom_toBottomOf="parent"
 
-	tools:context=".MainActivity"
+	tools:context=".ui.main.MainActivity"
 	app:defaultNavHost="true"
 	app:navGraph="@navigation/nav_graph"
 	tools:layout="@layout/home_fragment" />
