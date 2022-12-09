@@ -6,10 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.viewbinding.ViewBinding
 import javax.inject.Inject
 
@@ -28,7 +26,7 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewDataBinding> (
 
 	private var _binding: VB? = null
 
-	val binding: VB = _binding!!
+	val binding: VB get() = _binding!!
 
 	override fun onCreateView(
 		inflater: LayoutInflater,
@@ -37,6 +35,7 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewDataBinding> (
 	): View? {
 		viewModel = ViewModelProvider(this)[viewModelClass]
 		_binding = bindingInflater.invoke(inflater, container, false)
+		binding.lifecycleOwner = viewLifecycleOwner
 		val view = binding.root
 		return view
 	}
