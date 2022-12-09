@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.viewbinding.ViewBinding
-import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 /**
@@ -18,8 +17,7 @@ import javax.inject.Inject
  *
  * initializes viewModels and  binding for the application fragments
  */
-@AndroidEntryPoint
-abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> @Inject constructor(
+abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> (
 	private val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> VB,
 	private val viewModelClass: (Class<VM>),
 ) : Fragment() {
