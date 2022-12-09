@@ -1,0 +1,49 @@
+package com.fawry.tmdb.common
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.get
+import androidx.viewbinding.ViewBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+
+/**
+ * BaseFragment class which has common fragment functionality
+ *
+ * initializes viewModels and  binding for the application fragments
+ */
+@AndroidEntryPoint
+abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> @Inject constructor(
+	private val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> VB,
+	private val viewModelClass: (Class<VM>),
+) : Fragment() {
+
+	@Inject
+	lateinit var viewModel: VM
+
+	private var _binding: VB? = null
+
+	val binding: VB = _binding!!
+
+	override fun onCreateView(
+		inflater: LayoutInflater,
+		container: ViewGroup?,
+		savedInstanceState: Bundle?
+	): View? {
+		viewModel = ViewModelProvider(this)[viewModelClass]
+		_binding = bindingInflater.invoke(inflater, container, false)
+		val view = binding.root
+		return view
+	}
+
+	override fun onDestroyView() {
+		super.onDestroyView()
+		_binding = null
+	}
+}
