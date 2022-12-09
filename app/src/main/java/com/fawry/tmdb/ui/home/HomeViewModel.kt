@@ -1,4 +1,4 @@
-package com.fawry.tmdb.ui.main.home
+package com.fawry.tmdb.ui.home
 
 import androidx.lifecycle.ViewModel
 
