@@ -80,6 +80,7 @@ dependencies {
 	// Retrofit Networking library
 	implementation(libs.retrofit)
 	implementation(libs.retrofit.converter.gson)
+	implementation(libs.okhttp3.logging.interceptor)
 
 	// Hilt Dependency Injection
 	implementation(libs.hilt.android)
