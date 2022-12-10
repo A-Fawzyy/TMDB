@@ -77,6 +77,10 @@ dependencies {
 	implementation(libs.androidx.navigation.fragment)
 	implementation(libs.androidx.navigation.ui)
 
+	// Retrofit Networking library
+	implementation(libs.retrofit)
+	implementation(libs.retrofit.converter.gson)
+
 	// Hilt Dependency Injection
 	implementation(libs.hilt.android)
 	kapt(libs.hilt.compiler)
