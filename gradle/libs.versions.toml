@@ -22,6 +22,8 @@ kotlin = "1.7.20"
 ksp = "1.7.20-1.0.8"
 retrofit = "2.9.0"
 httpLoggingInterceptor = "4.10.0"
+paging = "3.1.1"
+pagingCompose = "1.0.0-alpha17"
 
 [libraries]
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidxCore" }
@@ -51,6 +53,9 @@ androidx-navigation-compose = { module = "androidx.navigation:navigation-compose
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidxRoom" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidxRoom" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidxRoom" }
+androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging"}
+androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagingCompose"}
+androidx-paging-testing = { module = "androidx.paging:paging-common", version.ref = "paging"}
 androidx-test-core = { module = "androidx.test:core", version.ref = "androidxTest" }
 androidx-test-ext-junit = { module = "androidx.test.ext:junit", version.ref = "androidxTestExt" }
 androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidxTestRunner" }

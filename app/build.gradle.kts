@@ -82,6 +82,10 @@ dependencies {
 	implementation(libs.retrofit.converter.gson)
 	implementation(libs.okhttp3.logging.interceptor)
 
+	// Paging
+	implementation(libs.androidx.paging.runtime)
+	implementation(libs.androidx.paging.compose)
+
 	// Hilt Dependency Injection
 	implementation(libs.hilt.android)
 	kapt(libs.hilt.compiler)
@@ -100,6 +104,7 @@ dependencies {
 	// Local tests: jUnit, coroutines, Android runner
 	testImplementation(libs.junit)
 	testImplementation(libs.kotlinx.coroutines.test)
+	testImplementation(libs.androidx.paging.testing)
 
 	// Instrumented tests: jUnit rules and runners
 
