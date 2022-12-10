@@ -82,6 +82,9 @@ dependencies {
 	implementation(libs.retrofit.converter.gson)
 	implementation(libs.okhttp3.logging.interceptor)
 
+	// Preference Library
+	implementation(libs.androidx.preference)
+
 	// Paging
 	implementation(libs.androidx.paging.runtime)
 	implementation(libs.androidx.paging.compose)
